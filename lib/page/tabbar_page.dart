@@ -25,14 +25,14 @@ class _TabBarPageState extends State<TabBarPage>
         child: Column(
           children: [
             Container(
-              width: 200,
+              width: 220,
               height: 30,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                      width: 1, color: Colors.blue, style: BorderStyle.solid),
-                  borderRadius: BorderRadius.circular(20),
-                  ),
+                color: Colors.white,
+                border: Border.all(
+                    width: 1, color: Colors.blue, style: BorderStyle.solid),
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: TabBar(
                 labelColor: Colors.white,
                 unselectedLabelColor: Colors.blue,
