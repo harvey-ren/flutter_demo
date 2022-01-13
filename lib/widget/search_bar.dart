@@ -94,8 +94,7 @@ class _SearchBarState extends State<SearchBar> {
     } else {
       inputBoxColor = Color(int.parse('0xffededed'));
     }
-    return
-      Container(
+    return Container(
       height: 40,
       padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       decoration: BoxDecoration(
@@ -116,7 +115,7 @@ class _SearchBarState extends State<SearchBar> {
                 ? TextField(
                     controller: _controller,
                     onChanged: _onChanged,
-                    autofocus: true,
+                    autofocus: false,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.black,
@@ -179,7 +178,7 @@ class _SearchBarState extends State<SearchBar> {
   }
 
   _genHomeSearch() {
-   return Container(
+    return Container(
       height: 40,
       padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Row(
@@ -194,53 +193,53 @@ class _SearchBarState extends State<SearchBar> {
           Expanded(
             child: widget.searchBarType == SearchBarType.normal
                 ? TextField(
-                controller: _controller,
-                onChanged: _onChanged,
-                autofocus: true,
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w300,
-                ),
-                decoration: InputDecoration(
-                    isCollapsed: true,
-                    contentPadding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                    border: InputBorder.none,
-                    hintText: widget.hint ?? '',
-                    hintStyle: TextStyle(fontSize: 15)))
+                    controller: _controller,
+                    onChanged: _onChanged,
+                    autofocus: true,
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w300,
+                    ),
+                    decoration: InputDecoration(
+                        isCollapsed: true,
+                        contentPadding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                        border: InputBorder.none,
+                        hintText: widget.hint ?? '',
+                        hintStyle: TextStyle(fontSize: 15)))
                 : _wrapTap(
-                Container(
-                  child: Text(
-                    widget.defaultText,
-                    style: TextStyle(fontSize: 13, color: Colors.grey),
-                  ),
-                ),
-                widget.inputBoxClick),
+                    Container(
+                      child: Text(
+                        widget.defaultText,
+                        style: TextStyle(fontSize: 13, color: Colors.grey),
+                      ),
+                    ),
+                    widget.inputBoxClick),
           ),
           !showClear
               ? _wrapTap(
-              Icon(
-                Icons.mic,
-                size: 20,
-                color: widget.searchBarType == SearchBarType.normal
-                    ? Colors.blue
-                    : Colors.grey,
-              ),
-              widget.speakClick)
+                  Icon(
+                    Icons.mic,
+                    size: 20,
+                    color: widget.searchBarType == SearchBarType.normal
+                        ? Colors.blue
+                        : Colors.grey,
+                  ),
+                  widget.speakClick)
               : _wrapTap(
-              Icon(
-                Icons.clear,
-                size: 20,
-                color: Colors.grey,
-              ), () {
-            setState(() {
-              _controller.clear();
-            });
-            _onChanged('');
-          })
+                  Icon(
+                    Icons.clear,
+                    size: 20,
+                    color: Colors.grey,
+                  ), () {
+                  setState(() {
+                    _controller.clear();
+                  });
+                  _onChanged('');
+                })
         ],
       ),
-    )
+    );
   }
 
   _wrapTap(Widget child, VoidCallback callback) {
