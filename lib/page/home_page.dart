@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           SearchBar(
             hideLeft: true,
-            defaultText: 'hahaa',
+            defaultText: '',
             searchBarType: SearchBarType.normal,
             hint: '在这里输入搜索关键字',
             leftButtonClick: (){

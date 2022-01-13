@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:f_bili/page/home_page.dart';
 import 'package:f_bili/page/my_page.dart';
+import 'package:f_bili/page/tabbar_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         return child;
       },
       navigatorObservers: [BotToastNavigatorObserver()],
-      home: HomePage(),
+      home: TabBarPage(),
     );
   }
 }
