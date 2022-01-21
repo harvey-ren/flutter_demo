@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 enum HttpMethod { GET, POST, DELETE }
 
 abstract class BaseRequest {
+
   var pathParams;
   var useHttps = true;
   Map<String, String> params = Map();

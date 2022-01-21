@@ -1,10 +1,8 @@
+import 'package:bili/http/core/hi_error.dart';
+import 'package:bili/http/core/hi_net.dart';
+import 'package:bili/http/request/test_request.dart';
+import 'package:bili/widget/search_bar.dart';
 import 'package:bot_toast/bot_toast.dart';
-import 'package:f_bili/http/core/hi_error.dart';
-import 'package:f_bili/http/core/hi_net.dart';
-import 'package:f_bili/http/request/test_request.dart';
-import 'package:f_bili/page/my_page.dart';
-import 'package:f_bili/page/search_page.dart';
-import 'package:f_bili/widget/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -23,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: ListView(
         children: [
@@ -32,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             defaultText: '',
             searchBarType: SearchBarType.normal,
             hint: '在这里输入搜索关键字',
-            leftButtonClick: (){
+            leftButtonClick: () {
               Navigator.pop(context);
             },
             onChanged: _onTextChanged,
@@ -180,13 +178,22 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  ClipOval _buildClipOval() {
-    return ClipOval(
-      child: Image.asset(
-        "assets/images/mn.png",
-        width: 160,
-        height: 160,
-        fit: BoxFit.cover,
+  _buildClipOval() {
+    return SizedBox(
+      width: 140,
+      height: 140,
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        children: [
+          ClipOval(
+            child: Image.asset(
+              "assets/images/mn.png",
+              width: 140,
+              height: 140,
+              fit: BoxFit.cover,
+            ),
+          )
+        ],
       ),
     );
   }

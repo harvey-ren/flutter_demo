@@ -9,5 +9,4 @@ class NavigationBar extends StatelessWidget {
     return Container();
   }
 
-
 }

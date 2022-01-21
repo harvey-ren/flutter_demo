@@ -1,9 +1,10 @@
-import 'package:f_bili/http/core/hi_error.dart';
-import 'package:f_bili/http/core/hi_net_adapter.dart';
-import 'package:f_bili/http/core/mock_adapter.dart';
-import 'package:f_bili/http/request/base_request.dart';
+import 'package:bili/http/core/hi_error.dart';
+import 'package:bili/http/core/mock_adapter.dart';
+import 'package:bili/http/request/base_request.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer';
+
+import 'hi_net_adapter.dart';
 
 class HiNet {
   HiNet._();
@@ -34,6 +35,7 @@ class HiNet {
     }
     var result = response.data;
     printLog(result);
+
     var status = response.statusCode;
     switch (status) {
       case 200:
